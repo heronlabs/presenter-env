@@ -58,10 +58,6 @@ export class ApiConfiguration implements IApiConfiguration {
   ) {}
 ```
 
-## Build
-
-The Dockerfile is an example for Node environments and may change depending on the resources used in the headless browser.
-
 ## Built with
 
 - [Dotenv](https://github.com/motdotla/dotenv)
