@@ -26,26 +26,19 @@ npm install -g @heronlabs/env
 ## Usage
 
 ```typescript
+require('dotenv').config();
+
 import {
   BufferEnvPresenter,
   EnvBootstrap,
   Environment,
   NumberEnvPresenter,
-  TextEnvPresenter
+  TextEnvPresenter,
 } from '@heronlabs/env';
+
 import {Module, Inject} from '@nestjs/common';
-import {Algorithm} from 'jsonwebtoken';
 
-import {IApiConfiguration} from './interfaces/api-configuration';
-
-@Module({
-  providers: [],
-  imports: [EnvBootstrap],
-  controllers: [],
-})
-export class ApiBootstrap {}
-
-export class ApiConfiguration implements IApiConfiguration {
+export class Configuration {
   public server = {
     port: this.numberEnvPresenter.getValueByKey('API_PORT'),
   };
@@ -58,8 +51,15 @@ export class ApiConfiguration implements IApiConfiguration {
   constructor(
     @Inject(NumberEnvPresenter) private numberEnvPresenter: Environment<number>,
     @Inject(BufferEnvPresenter) private bufferEnvPresenter: Environment<Buffer>,
-    @Inject(TextEnvPresenter) private textEnvPresenter: Environment<Algorithm>
+    @Inject(TextEnvPresenter) private textEnvPresenter: Environment<string>
   ) {}
+}
+
+@Module({
+  providers: [Configuration],
+  imports: [EnvBootstrap],
+})
+export class ApiBootstrap {}
 ```
 
 ## Built with
