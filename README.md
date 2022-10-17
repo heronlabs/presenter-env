@@ -26,7 +26,13 @@ npm install -g @heronlabs/env
 ## Usage
 
 ```typescript
-import {BufferEnvPresenter, EnvBootstrap, Environment, NumberEnvPresenter, TextEnvPresenter} from '@heronlabs/env';
+import {
+  BufferEnvPresenter,
+  EnvBootstrap,
+  Environment,
+  NumberEnvPresenter,
+  TextEnvPresenter
+} from '@heronlabs/env';
 import {Module, Inject} from '@nestjs/common';
 import {Algorithm} from 'jsonwebtoken';
 
@@ -45,16 +51,14 @@ export class ApiConfiguration implements IApiConfiguration {
   };
 
   public jwt = {
-    publicKey: this.processEnvBufferService.getValueByKey(
-      'JWT_PUBLIC_KEY_PATH'
-    ),
-    algorithm: this.processEnvTextService.getValueByKey('JWT_ALGORITHM'),
+    publicKey: this.bufferEnvPresenter.getValueByKey('JWT_PUBLIC_KEY_PATH'),
+    algorithm: this.textEnvPresenter.getValueByKey('JWT_ALGORITHM'),
   };
 
   constructor(
     @Inject(NumberEnvPresenter) private numberEnvPresenter: Environment<number>,
-    @Inject(BufferEnvPresenter) private bufferEnvPresenter: IEnvironment<Buffer>,
-    @Inject(TextEnvPresenter) private textEnvPresenter: IEnvironment<Algorithm>
+    @Inject(BufferEnvPresenter) private bufferEnvPresenter: Environment<Buffer>,
+    @Inject(TextEnvPresenter) private textEnvPresenter: Environment<Algorithm>
   ) {}
 ```
 
