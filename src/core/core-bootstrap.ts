@@ -1,8 +1,8 @@
-import {Module} from '@nestjs/common';
+import {Module, ModuleMetadata} from '@nestjs/common';
 
 import {ProcessEnvService} from './services/process-env-service';
 
-export const coreModule = {
+export const coreModule: ModuleMetadata = {
   providers: [
     {
       useFactory: () => process.env,
