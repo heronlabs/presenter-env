@@ -1,13 +1,17 @@
-import {ValueIsNotNumber} from '../../../../src/core/errors/value-is-not-number';
-import {NumberEnvPresenter} from '../../../../src/entry-point';
-import {EnvironmentMock} from '../../__mocks__/interfaces/environment-mock';
+import {ValueIsNotNumber} from '../../../../../src/core/errors/value-is-not-number';
+import {NumberEnvPresenter} from '../../../../../src/entry-point';
+import {EnvironmentMock} from '../../../__mocks__/interfaces/environment-mock';
 import {
   ProcessEnvMock,
   ProcessEnvNumberKey,
-} from '../../__mocks__/libs/nodejs-process-env-mock';
+} from '../../../__mocks__/libs/nodejs-process-env-mock';
 
 describe('Given Number Env Presenter', () => {
-  const service = new NumberEnvPresenter(EnvironmentMock);
+  let presenter: NumberEnvPresenter;
+
+  beforeEach(() => {
+    presenter = new NumberEnvPresenter(EnvironmentMock);
+  });
 
   describe('When attempt to access number from environment', () => {
     it('Should return number from environment key', () => {
@@ -15,7 +19,7 @@ describe('Given Number Env Presenter', () => {
 
       EnvironmentMock.getValueByKey.mockReturnValue(envNumber);
 
-      const value = service.getValueByKey(ProcessEnvNumberKey);
+      const value = presenter.getValueByKey(ProcessEnvNumberKey);
 
       expect(value).toBe(envNumber);
     });
@@ -25,7 +29,7 @@ describe('Given Number Env Presenter', () => {
 
       EnvironmentMock.getValueByKey.mockReturnValue(mockValue);
 
-      expect(() => service.getValueByKey(ProcessEnvNumberKey)).toThrow(
+      expect(() => presenter.getValueByKey(ProcessEnvNumberKey)).toThrow(
         ValueIsNotNumber.make(ProcessEnvNumberKey)
       );
     });

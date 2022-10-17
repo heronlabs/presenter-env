@@ -3,6 +3,7 @@ import {ProcessEnvService} from '../../../../src/core/services/process-env-servi
 import {
   ProcessEnvMock,
   ProcessEnvMoq,
+  ProcessEnvTextKey,
 } from '../../__mocks__/libs/nodejs-process-env-mock';
 
 describe('Given Process Env Service', () => {
@@ -12,7 +13,7 @@ describe('Given Process Env Service', () => {
     it('Should return text from environment key', () => {
       const value = service.getValueByKey('foo');
 
-      expect(value).toBe(ProcessEnvMock.foo);
+      expect(value).toBe(ProcessEnvMock[ProcessEnvTextKey]);
     });
 
     it('Should throw value undefined', () => {

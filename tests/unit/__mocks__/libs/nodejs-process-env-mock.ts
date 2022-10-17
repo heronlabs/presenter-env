@@ -1,8 +1,8 @@
 import {Mock} from 'moq.ts';
 
-export const ProcessEnvTextKey = 'foo';
-export const ProcessEnvNumberKey = 'bar';
-export const ProcessEnvBufferPathKey = 'baz';
+export const ProcessEnvTextKey = 'FOO';
+export const ProcessEnvNumberKey = 'BAR';
+export const ProcessEnvBufferPathKey = 'BAZ';
 
 export const ProcessEnvMock = {
   [ProcessEnvTextKey]: 'bar',
@@ -12,5 +12,5 @@ export const ProcessEnvMock = {
 
 export const ProcessEnvMoq = new Mock<NodeJS.ProcessEnv>()
   .setup(mock => mock.foo)
-  .returns(ProcessEnvMock.foo)
+  .returns(ProcessEnvMock[ProcessEnvTextKey])
   .object();
