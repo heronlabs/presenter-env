@@ -1,4 +1,4 @@
-name: Publish Env
+name: Publish Presenter Env
 
 on:
   - workflow_dispatch
@@ -24,12 +24,12 @@ jobs:
       - name: Checkout action repository
         uses: actions/checkout@v3
         with:
-          repository: heronlabs/publish-npm-action
-          ref: 2.0.0
+          repository: heronlabs/publish-github-package-action
+          ref: 1.0.0
           token: ${{ secrets.AUTHOR_PERSONAL_ACCESS}}
-          path: ./publish-npm-action
+          path: ./publish-github-package-action
 
       - name: Run action
-        uses: './publish-npm-action/application/github'
+        uses: './publish-github-package-action/application/github'
         with:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          AUTHOR_PERSONAL_ACCESS: ${{ secrets.AUTHOR_PERSONAL_ACCESS }}
