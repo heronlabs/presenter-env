@@ -20,7 +20,7 @@ Given key from environment retrieve the value.
 ### Installation
 
 ```
-npm install -g @heronlabs/env
+npm install -g @heronlabs/presenter-env
 ```
 
 ## Usage
@@ -34,7 +34,7 @@ import {
   Environment,
   NumberEnvPresenter,
   TextEnvPresenter,
-} from '@heronlabs/env';
+} from '@heronlabs/presenter-env';
 
 import {Module, Inject} from '@nestjs/common';
 
