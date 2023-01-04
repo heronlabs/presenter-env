@@ -10,9 +10,3 @@ tests/
 
 # Etc
 *.yml
-
-# PDF Migrations
-*-migration-*/
-
-# Views Folders
-views-folder-*/

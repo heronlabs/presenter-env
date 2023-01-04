@@ -1,8 +1,9 @@
-FROM node:14.18.2-alpine3.12
+FROM heronlabs/node-alpine:1
 
 WORKDIR /app
 
 COPY . .
 
 RUN yarn install --frozen-lockfile \
+  && yarn cache clean \
   && yarn compile
