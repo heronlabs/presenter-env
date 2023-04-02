@@ -1,4 +1,4 @@
-name: Build Presenter Env
+name: Build
 
 on:
   - push
