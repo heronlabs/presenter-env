@@ -23,15 +23,15 @@ jobs:
         with:
           AUTHOR_PERSONAL_ACCESS: ${{ secrets.AUTHOR_PERSONAL_ACCESS }}
 
-      - name: '[ACTION] | Clone publish github package action'
+      - name: '[ACTION] | Clone publish npm action'
         uses: actions/checkout@v3
         with:
-          repository: heronlabs/publish-github-package-action
-          ref: 3.0.0
+          repository: heronlabs/publish-npm-action
+          ref: 4.0.0
           token: ${{ secrets.AUTHOR_PERSONAL_ACCESS}}
-          path: ./publish-github-package-action
+          path: ./publish-npm-action
 
-      - name: '[ACTION] | Run publish github package action'
-        uses: './publish-github-package-action/application/github'
+      - name: '[ACTION] | Run publish npm action'
+        uses: './publish-npm-action/application/github'
         with:
-          AUTHOR_PERSONAL_ACCESS: ${{ secrets.AUTHOR_PERSONAL_ACCESS }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
