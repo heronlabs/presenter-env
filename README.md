@@ -19,7 +19,11 @@ Given key from environment retrieve the value.
 ### Installation
 
 ```
-npm install -g @heronlabs/presenter-env
+npm install @heronlabs/presenter-env
+```
+
+```
+yarn add @heronlabs/presenter-env
 ```
 
 ## Usage
