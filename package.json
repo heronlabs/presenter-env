@@ -2,11 +2,12 @@
   "name": "@heronlabs/presenter-env",
   "version": "1.0.0",
   "description": "Project created to provide environment variables.",
+  "repository": "git@github.com:heronlabs/presenter-env.git",
   "author": "Lucas Lacerda",
   "license": "MIT",
   "private": false,
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "access": "public"
   },
   "main": "bin/entry-point.js",
   "files": [
