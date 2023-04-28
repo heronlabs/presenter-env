@@ -63,7 +63,7 @@ describe('Given Buffer Ssm Presenter', () => {
       const path = faker.datatype.string();
 
       expect(() => presenter.getValueByKey(path)).rejects.toThrow(
-        FileNotExists.make(path)
+        FileNotExists.make(pathValue)
       );
     });
   });
