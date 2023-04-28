@@ -1,6 +1,6 @@
 {
   "name": "@heronlabs/presenter-env",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Project created to provide environment variables.",
   "repository": "git@github.com:heronlabs/presenter-env.git",
   "author": "Lucas Lacerda",

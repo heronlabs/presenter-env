@@ -3,4 +3,9 @@ export {EnvironmentFactory} from './application/env/factories/environment-factor
 export {BufferEnvPresenter} from './application/env/presenters/buffer-env-presenter';
 export {NumberEnvPresenter} from './application/env/presenters/number-env-presenter';
 export {TextEnvPresenter} from './application/env/presenters/text-env-presenter';
+export {ParameterFactory} from './application/ssm/factories/parameter-factory';
+export {BufferSsmPresenter} from './application/ssm/presenters/buffer-ssm-presenter';
+export {NumberSsmPresenter} from './application/ssm/presenters/number-ssm-presenter';
+export {TextSsmPresenter} from './application/ssm/presenters/text-ssm-presenter';
+export {SsmBootstrap} from './application/ssm/ssm-bootstrap';
 export {Environment} from './core/interfaces/environment';
