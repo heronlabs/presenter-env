@@ -7,7 +7,7 @@ import {ProcessEnvService} from './process-env-service';
 
 export class ParameterService implements Environment<string> {
   async getValueByKey(key: string): Promise<string> {
-    const path = this.processEnvService.getValueByKey(this.paramRoot);
+    const path = await this.processEnvService.getValueByKey(this.paramRoot);
 
     const result = await this.parameter.getParameter({
       Name: `${path}/${key}`,

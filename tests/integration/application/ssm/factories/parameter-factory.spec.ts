@@ -2,7 +2,7 @@ import {faker} from '@faker-js/faker';
 
 import {ParameterFactory} from '../../../../../src/entry-point';
 
-describe('Given Environment Factory', () => {
+describe('Given Parameter Factory', () => {
   let factory: ParameterFactory;
 
   beforeEach(async () => {
