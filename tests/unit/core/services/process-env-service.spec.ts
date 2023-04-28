@@ -10,16 +10,16 @@ describe('Given Process Env Service', () => {
   const service = new ProcessEnvService(ProcessEnvMoq);
 
   describe('When attempt to access value from environment', () => {
-    it('Should return text from environment key', () => {
-      const value = service.getValueByKey('foo');
+    it('Should return text from environment key', async () => {
+      const value = await service.getValueByKey('foo');
 
       expect(value).toBe(ProcessEnvMock[ProcessEnvTextKey]);
     });
 
-    it('Should throw value undefined', () => {
+    it('Should throw value undefined', async () => {
       const mockKey = 'NOT_MY_KEY';
 
-      expect(() => service.getValueByKey(mockKey)).toThrow(
+      expect(() => service.getValueByKey(mockKey)).rejects.toThrow(
         ValueUndefined.make(mockKey)
       );
     });

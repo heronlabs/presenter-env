@@ -8,7 +8,7 @@ import {TextEnvPresenter} from './presenters/text-env-presenter';
 export const envModule: ModuleMetadata = {
   providers: [TextEnvPresenter, NumberEnvPresenter, BufferEnvPresenter],
   exports: [TextEnvPresenter, NumberEnvPresenter, BufferEnvPresenter],
-  imports: [CoreBootstrap],
+  imports: [CoreBootstrap.register('')],
 };
 @Module(envModule)
 export class EnvBootstrap {}

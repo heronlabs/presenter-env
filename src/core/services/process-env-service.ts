@@ -4,7 +4,7 @@ import {ValueUndefined} from '../errors/value-undefined';
 import {Environment} from '../interfaces/environment';
 
 export class ProcessEnvService implements Environment<string> {
-  getValueByKey(key: string): string {
+  async getValueByKey(key: string): Promise<string> {
     const value = this.processEnv[key];
 
     if (!value) {

@@ -1,9 +1,9 @@
 import {faker} from '@faker-js/faker';
 import {Test} from '@nestjs/testing';
 
-import {envModule} from '../../../../../src/application/env/env-bootstrap';
-import {ValueUndefined} from '../../../../../src/core/errors/value-undefined';
-import {TextEnvPresenter} from '../../../../../src/entry-point';
+import {envModule} from '../../../../../../src/application/env/env-bootstrap';
+import {ValueUndefined} from '../../../../../../src/core/errors/value-undefined';
+import {TextEnvPresenter} from '../../../../../../src/entry-point';
 
 describe('Given Text Env Presenter', () => {
   let presenter: TextEnvPresenter;
@@ -15,18 +15,18 @@ describe('Given Text Env Presenter', () => {
   });
 
   describe('When attempt to access text from environment', () => {
-    it('Should return text from environment key', () => {
-      const value = presenter.getValueByKey('ENV_TEXT');
+    it('Should return text from environment key', async () => {
+      const value = await presenter.getValueByKey('ENV_TEXT');
 
       expect(value).toBe('foo');
     });
   });
 
   describe('When attempt to access undefined value', () => {
-    it('Should throw value undefined', () => {
+    it('Should throw value undefined', async () => {
       const mockKey = faker.name.firstName();
 
-      expect(() => presenter.getValueByKey(mockKey)).toThrow(
+      expect(() => presenter.getValueByKey(mockKey)).rejects.toThrow(
         ValueUndefined.make(mockKey)
       );
     });

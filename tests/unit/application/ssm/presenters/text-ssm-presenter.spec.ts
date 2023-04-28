@@ -1,15 +1,15 @@
-import {TextEnvPresenter} from '../../../../../src/entry-point';
+import {TextSsmPresenter} from '../../../../../src/application/ssm/presenters/text-ssm-presenter';
 import {EnvironmentMock} from '../../../__mocks__/interfaces/environment-mock';
 import {
   ProcessEnvMock,
   ProcessEnvTextKey,
 } from '../../../__mocks__/libs/nodejs-process-env-mock';
 
-describe('Given Text Env Presenter', () => {
-  let presenter: TextEnvPresenter;
+describe('Given Text Ssm Presenter', () => {
+  let presenter: TextSsmPresenter;
 
   beforeEach(() => {
-    presenter = new TextEnvPresenter(EnvironmentMock);
+    presenter = new TextSsmPresenter(EnvironmentMock);
   });
 
   describe('When attempt to access text from environment', () => {

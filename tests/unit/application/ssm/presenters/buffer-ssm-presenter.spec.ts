@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 
-import {BufferEnvPresenter} from '../../../../../src/application/env/presenters/buffer-env-presenter';
+import {BufferSsmPresenter} from '../../../../../src/application/ssm/presenters/buffer-ssm-presenter';
 import {FileNotExists} from '../../../../../src/core/errors/file-not-exists';
 import {EnvironmentMock} from '../../../__mocks__/interfaces/environment-mock';
 import {
@@ -8,11 +8,11 @@ import {
   ProcessEnvMock,
 } from '../../../__mocks__/libs/nodejs-process-env-mock';
 
-describe('Given Buffer Env Presenter', () => {
-  let presenter: BufferEnvPresenter;
+describe('Given Buffer Ssm Presenter', () => {
+  let presenter: BufferSsmPresenter;
 
   beforeEach(() => {
-    presenter = new BufferEnvPresenter(EnvironmentMock);
+    presenter = new BufferSsmPresenter(EnvironmentMock);
   });
 
   describe('When attempt to access file path from environment', () => {

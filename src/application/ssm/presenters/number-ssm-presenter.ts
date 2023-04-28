@@ -2,11 +2,11 @@ import {Inject} from '@nestjs/common';
 
 import {ValueIsNotNumber} from '../../../core/errors/value-is-not-number';
 import {Environment} from '../../../core/interfaces/environment';
-import {ProcessEnvService} from '../../../core/services/process-env-service';
+import {ParameterService} from '../../../core/services/parameter-service';
 
-export class NumberEnvPresenter implements Environment<number> {
+export class NumberSsmPresenter implements Environment<number> {
   async getValueByKey(key: string): Promise<number> {
-    const value = await this.processEnvService.getValueByKey(key);
+    const value = await this.parameterService.getValueByKey(key);
 
     const valueAsNumber = Number(value);
 
@@ -18,7 +18,7 @@ export class NumberEnvPresenter implements Environment<number> {
   }
 
   constructor(
-    @Inject(ProcessEnvService)
-    private processEnvService: Environment<string>
+    @Inject(ParameterService)
+    private parameterService: Environment<string>
   ) {}
 }

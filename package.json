@@ -1,6 +1,6 @@
 {
   "name": "@heronlabs/presenter-env",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Project created to provide environment variables.",
   "repository": "git@github.com:heronlabs/presenter-env.git",
   "author": "Lucas Lacerda",
@@ -48,6 +48,7 @@
     "typescript": "4.8.4"
   },
   "dependencies": {
+    "@aws-sdk/client-ssm": "^3.321.1",
     "@nestjs/common": "^9.0.0",
     "@nestjs/core": "^9.4.0",
     "handlebars": "4.7.7",

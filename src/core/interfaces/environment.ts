@@ -1,3 +1,3 @@
 export interface Environment<T> {
-  getValueByKey(key: string): T;
+  getValueByKey(key: string): Promise<T>;
 }

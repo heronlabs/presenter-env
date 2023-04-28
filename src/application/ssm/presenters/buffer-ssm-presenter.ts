@@ -3,11 +3,11 @@ import {existsSync, readFileSync} from 'fs';
 
 import {FileNotExists} from '../../../core/errors/file-not-exists';
 import {Environment} from '../../../core/interfaces/environment';
-import {ProcessEnvService} from '../../../core/services/process-env-service';
+import {ParameterService} from '../../../core/services/parameter-service';
 
-export class BufferEnvPresenter implements Environment<Buffer> {
+export class BufferSsmPresenter implements Environment<Buffer> {
   async getValueByKey(key: string): Promise<Buffer> {
-    const path = await this.processEnvService.getValueByKey(key);
+    const path = await this.parameterService.getValueByKey(key);
 
     const fileExists = existsSync(path);
 
@@ -20,7 +20,7 @@ export class BufferEnvPresenter implements Environment<Buffer> {
   }
 
   constructor(
-    @Inject(ProcessEnvService)
-    private processEnvService: Environment<string>
+    @Inject(ParameterService)
+    private parameterService: Environment<string>
   ) {}
 }

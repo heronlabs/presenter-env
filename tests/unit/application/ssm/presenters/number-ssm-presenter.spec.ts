@@ -1,16 +1,16 @@
+import {NumberSsmPresenter} from '../../../../../src/application/ssm/presenters/number-ssm-presenter';
 import {ValueIsNotNumber} from '../../../../../src/core/errors/value-is-not-number';
-import {NumberEnvPresenter} from '../../../../../src/entry-point';
 import {EnvironmentMock} from '../../../__mocks__/interfaces/environment-mock';
 import {
   ProcessEnvMock,
   ProcessEnvNumberKey,
 } from '../../../__mocks__/libs/nodejs-process-env-mock';
 
-describe('Given Number Env Presenter', () => {
-  let presenter: NumberEnvPresenter;
+describe('Given Number Ssm Presenter', () => {
+  let presenter: NumberSsmPresenter;
 
   beforeEach(() => {
-    presenter = new NumberEnvPresenter(EnvironmentMock);
+    presenter = new NumberSsmPresenter(EnvironmentMock);
   });
 
   describe('When attempt to access number from environment', () => {
