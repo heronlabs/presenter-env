@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Project created to provide environment variables.",
   "license": "MIT",
-  "private": false,
   "publishConfig": {
     "access": "public",
     "registry": "https://npm.pkg.github.com/"
