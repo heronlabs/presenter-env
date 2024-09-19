@@ -1,6 +1,6 @@
 {
   "name": "@heronlabs/presenter-env",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Project created to provide environment variables.",
   "license": "MIT",
   "publishConfig": {
@@ -48,7 +48,6 @@
   "dependencies": {
     "@nestjs/common": "^9.0.0",
     "@nestjs/core": "^9.4.0",
-    "handlebars": "4.7.7",
     "reflect-metadata": "^0.1.13",
     "rxjs": "7.5.6"
   },
