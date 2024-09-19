@@ -1,13 +1,12 @@
 {
   "name": "@heronlabs/presenter-env",
-  "version": "3.1.0",
+  "version": "1.0.0",
   "description": "Project created to provide environment variables.",
-  "repository": "git@github.com:heronlabs/presenter-env.git",
-  "author": "Lucas Lacerda",
   "license": "MIT",
   "private": false,
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://npm.pkg.github.com/"
   },
   "main": "bin/entry-point.js",
   "files": [
@@ -65,9 +64,7 @@
       "simple-import-sort/exports": "error",
       "simple-import-sort/imports": "error",
       "@typescript-eslint/no-duplicate-imports": "error",
-      "@typescript-eslint/no-unused-vars": [
-        "error"
-      ],
+      "@typescript-eslint/no-unused-vars": "error",
       "max-classes-per-file": [
         "error",
         1
