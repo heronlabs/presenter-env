@@ -10,6 +10,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: '[BUILD] | Install Dependencies'
+        run: yarn install --frozen-lockfile
+        shell: bash
+
+      - name: '[BUILD] | Compile'
+        run: yarn compile
+        shell: bash
+
       - name: '[ACTION] | Clone publish github package action'
         uses: actions/checkout@v4
         with:
